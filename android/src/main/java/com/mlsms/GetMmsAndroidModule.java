@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.text.MessageFormat;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -94,8 +95,12 @@ public class GetMmsAndroidModule extends ReactContextBaseJavaModule {
                 do {
                     JSONObject json;
                     json = getJsonFromCursor(cursor);
+                    String msg_id = cursor.getString(cursor.getColumnIndex("_id"));
+                    String sender = getAddressNumber(msg_id);
                     JSONArray attachments = getMMSWithId(cursor.getString(cursor.getColumnIndex("_id")));
+                    json.put("address", sender);
                     json.put("attachments", attachments);
+
                     jsons.put(json);
                 } while (cursor.moveToNext());
 
@@ -128,6 +133,7 @@ public class GetMmsAndroidModule extends ReactContextBaseJavaModule {
                 String partId = cursor.getString(cursor.getColumnIndex("_id"));
                 String type = cursor.getString(cursor.getColumnIndex("ct"));
 
+
                 JSONObject json;
                 json = getJsonFromCursor(cursor);
 
@@ -153,6 +159,31 @@ public class GetMmsAndroidModule extends ReactContextBaseJavaModule {
             } while (cursor.moveToNext());
         }
         return jsons;
+    }
+
+    private String getAddressNumber(String id) {
+      String addrSelection = "type=137 AND msg_id=" + id;
+      String uriStr = MessageFormat.format("content://mms/{0}/addr", id);
+      Uri uriAddress = Uri.parse(uriStr);
+      String[] columns = { "address" };
+      Cursor cursor = context.getContentResolver().query(uriAddress, columns, addrSelection, null, null);
+      String address = "";
+      String val;
+      if (cursor.moveToFirst()) {
+          do {
+              val = cursor.getString(cursor.getColumnIndex("address"));
+              if (val != null) {
+                  address = val;
+                  // Use the first one found if more than one
+                  break;
+              }
+          } while (cursor.moveToNext());
+      }
+      if (cursor != null) {
+          cursor.close();
+      }
+      // return address.replaceAll("[^0-9]", "");
+      return address;
     }
 
     @ReactMethod

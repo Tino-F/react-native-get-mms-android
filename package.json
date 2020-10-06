@@ -1,34 +1,60 @@
 {
-  "name": "react-native-get-mms-android",
-  "title": "React Native Get Mms Android",
-  "version": "0.0.1",
+  "_from": "git+https://github.com/Tino-F/react-native-get-mms-android.git",
+  "_id": "react-native-get-mms-android@0.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-get-mms-android",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/Tino-F/react-native-get-mms-android.git",
+    "rawSpec": "https://github.com/Tino-F/react-native-get-mms-android.git",
+    "saveSpec": "git+https://github.com/Tino-F/react-native-get-mms-android.git",
+    "fetchSpec": "https://github.com/Tino-F/react-native-get-mms-android.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/Tino-F/react-native-get-mms-android.git#9eb1af1aff3b62bcc1e75c1c1577df03b01b8d1c",
+  "_spec": "https://github.com/Tino-F/react-native-get-mms-android.git",
+  "_where": "/home/tino/react-native/BlakesMVP",
+  "author": {
+    "name": "OFF AXIS",
+    "email": "clement@offaxis.io"
+  },
+  "bugs": {
+    "url": "https://github.com/github_account/react-native-get-mms-android/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
   "description": "TODO",
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.61.5"
+  },
+  "homepage": "https://github.com/github_account/react-native-get-mms-android#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "react-native-get-mms-android",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/github_account/react-native-get-mms-android.git",
     "baseUrl": "https://github.com/github_account/react-native-get-mms-android"
   },
-  "keywords": [
-    "react-native"
-  ],
-  "author": "OFF AXIS <clement@offaxis.io>",
-  "license": "MIT",
-  "licenseFilename": "LICENSE",
-  "peerDependencies": {
-    "react": "^16.8.1",
-    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "react": "^16.9.0",
-    "react-native": "^0.61.5"
-  },
-  "bugs": {
-    "url": "https://github.com/github_account/react-native-get-mms-android/issues"
-  },
-  "homepage": "https://github.com/github_account/react-native-get-mms-android#readme",
-  "dependencies": {}
+  "title": "React Native Get Mms Android",
+  "version": "0.0.1"
 }
